@@ -1,0 +1,16 @@
+
+{% extends 'estoque/base.html' %}
+{% block content %}
+	<form method = "POST">
+		<h3>
+			{% if form.instance.pk %}
+				Atualizar : {{ form.instance.pk }}
+			{% else %}
+				Novo
+			{% endif %}
+		</h3>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type = "submit" class = "button primary">Submit</button>
+	</form>
+{% endblock %}

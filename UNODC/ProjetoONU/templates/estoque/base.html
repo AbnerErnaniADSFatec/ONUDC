@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Banco ONU</title>
+        <link rel = "stylesheet" href = "https://unpkg.com/chota@latest">
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "hero is-full-screen">
+                <h1 class = "is-text-center">{{ page_info }}</h1>
+                <nav class = "tabs is-center">
+                    <a href = "/">Início</a>
+                    <a href = "{% url 'agencia-list' %}">Agencias</a>
+                    <a href = "{% url 'psicologo-list' %}">Psicologos</a>
+                    <a href = "{% url 'depoimentos-list' %}">Depoimentos</a>
+                    {% if user.is_authenticated %}
+                        <a href = "{% url 'logout' %}">logout {{ user.username }}</a>
+                    {% else %}
+                        <a href = "{% url 'login' %}">login</a>
+                    {% endif %}
+                </nav>
+                {% block content %}
+                    Corpo do HTML
+                {% endblock content %}
+            </div>
+        </div>
+        <footer class = "is-text-center">
+            <p>
+                Django 2.1
+            </p>
+        </footer>
+        <script src = "https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        {% block js %}
+        {% endblock js %}
+        </body>
+</html>

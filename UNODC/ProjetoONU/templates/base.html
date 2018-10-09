@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Turi</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+  </head>
+  <body>
+    <div class = 'container'>
+        {% block content %}
+          Conteúdo
+        {% endblock %}
+    </div>
+    <footer class="is-text-center">
+        <p>
+            Django 2.1
+        </p>
+    </footer>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  {% block js %}
+  {% endblock js %}
+</html>

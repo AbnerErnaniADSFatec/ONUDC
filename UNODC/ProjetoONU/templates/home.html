@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <div class = "container">
+      <h3>Olá {{ user.username }}!</h3>
+      <p>
+        <a href = "{% url 'logout' %}"><button>logout</button></a>
+        <a href = "{% url 'signup' %}"><button>Novo Usuário</button></a>
+        <a href = "{% url 'index' %}"><button>Verificar Dados</button></a>
+      </p>
+    </div>
+  {% else %}
+    <div class = "container">
+      <h3>Você não está logado!</h3>
+      <p>
+        <a href = "{% url 'login' %}" ><button>login</button></a>
+        <a href = "{% url 'index' %}"><button>Verificar Dados</button></a>
+      </p>
+    </div>
+  {% endif %}
+{% endblock %}

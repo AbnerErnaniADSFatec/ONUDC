@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class = "container">
+        <h2>Login</h2>
+        <table class = "striped">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <a href = "{url 'estoque'}"><button type="submit">Login</button></a>
+            </form>
+        </table>
+    </div>
+{% endblock content %}

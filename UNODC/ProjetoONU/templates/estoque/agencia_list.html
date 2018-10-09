@@ -1,0 +1,32 @@
+{% extends 'estoque/base.html' %}
+{% block content %}
+	<table class = "striped">
+		<caption>
+			<h3>{{ page_info }}</h3>
+			<span class = "is-right">
+				<a class = "button primary" href = "{% url 'agencia-create' %}">Novo</a>
+			</span>
+		</caption>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Endereco</th>
+				<th>Contato</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for obj in object_list %}
+				<tr>
+					<td>
+						<a href = "{% url 'agencia-update' obj.pk %}">{{ obj.nome }}</a>
+					</td>
+					<td>{{ obj.endereco }}</td>
+					<td>{{ obj.contato }}</td>
+					<td>
+						<a class = "button error" href = "{% url 'generic-delete' obj.pk 'estoque' 'Agencia' %}?success_url = {% url 'agencia-list' %}">Remover</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

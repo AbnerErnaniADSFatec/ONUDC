@@ -1,0 +1,11 @@
+*.db
+*.egg
+*.egg-info/
+*.pot
+*.py[cod]
+*.so
+*.sqlite3
+*.sublime-project
+*.sublime-workspace
+.installed.cfg
+__pycache__/
